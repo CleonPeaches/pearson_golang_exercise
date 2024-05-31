@@ -1,27 +1,33 @@
 package handlers
 
 import (
+	"encoding/json"
 	"net/http"
-
-	"../services/quizService"
+	quizService "quizApp/services"
+	"quizApp/types"
 )
 
-// QuizHandler handles HTTP requests related to users.
-type QuizHandler struct {
-	quizService *quizService.quizService
-}
+func GetQuizByTitleHandler(w http.ResponseWriter, r *http.Request) {
+	// Extract quiz title from request parameters
+	quizTitle := r.URL.Query().Get("title")
+	if quizTitle == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
 
-// NewQuizHandler creates a new instance of QuizHandler.
-func NewQuizHandler(quizService *quizService.QuizService) *QuizHandler {
-	return &QuizHandler{quizService: quizService}
-}
+	// Call the service method to retrieve the quiz by its title
+	quiz, err := quizService.GetQuizByTitle(quizTitle)
+	if err != nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
 
-// GetUserByIDHandler handles requests to get a user by ID.
-func (h *QuizHandler) GetUserByIDHandler(w http.ResponseWriter, r *http.Request) {
-	// Implementation...
+	// Write JSON response
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(quiz)
 }
 
 // ListUsersHandler handles requests to list all users.
-func (h *QuizHandler) ListUsersHandler(w http.ResponseWriter, r *http.Request) {
-	// Implementation...
+func ListQuizzesHandler(w http.ResponseWriter, r *http.Request) []types.Quiz {
+	return quizService.ListQuizzes()
 }
