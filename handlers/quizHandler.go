@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 	quizService "quizApp/services"
-	"quizApp/types"
 )
 
 func GetQuizByTitleHandler(w http.ResponseWriter, r *http.Request) {
@@ -28,6 +27,9 @@ func GetQuizByTitleHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // ListUsersHandler handles requests to list all users.
-func ListQuizzesHandler(w http.ResponseWriter, r *http.Request) []types.Quiz {
-	return quizService.ListQuizzes()
+func ListQuizzesHandler(w http.ResponseWriter, r *http.Request) {
+	quizzes := quizService.ListQuizzes()
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(quizzes)
 }

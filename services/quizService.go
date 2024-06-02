@@ -11,7 +11,7 @@ import (
 var quizzes []types.Quiz
 
 func init() {
-	data, err := os.ReadFile("quizApp/demoData.json")
+	data, err := os.ReadFile("./demoData.json")
 	if err != nil {
 		fmt.Println("failed to read JSON file: %v", err)
 	}

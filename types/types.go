@@ -9,6 +9,6 @@ type Question struct {
 }
 
 type Quiz struct {
-	Title     string     `json:"text"`
+	Title     string     `json:"title"`
 	Questions []Question `json:"questions"`
 }
