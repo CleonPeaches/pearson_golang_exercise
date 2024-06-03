@@ -89,7 +89,7 @@ func fetchQuestionsByTopic(topic string) ([]types.Question, error) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("failed to fetch questions, status code: %d", resp.StatusCode)
+		return nil, fmt.Errorf("No questions were found with that given keyword, status code: %d", resp.StatusCode)
 	}
 
 	var questions []types.Question
