@@ -43,11 +43,12 @@ If the user selects keywords for an interested topic, e.g., "France", the progra
 ## Program Functionality
 
 1. The program should read the JSON file and parse its contents into a suitable data structure and save it. DONE
-2. The program should accept user input for the selected topic.
-3. The program should search the questions for any question containing the keyword/topic in the question text.
-4. If a matching question is found, the program should display the questions along with its options to the user.
+2. The program should accept user input for the selected topic. DONE
+3. The program should search the questions for any question containing the keyword/topic in the question text. DONE
+4. If a matching question is found, the program should display the questions along with its options to the user. DONE
 5. If no matching question is found, the program should display a message indicating that no questions were found for the given keyword.
 6. The program should accept user answers and respond back with correct or incorrect.
+7. (Added per problem statement) The program should save user answers to the mock database.
 
 ## Input/Output
 

@@ -49,5 +49,5 @@ func ListQuestionsByTopic(topic string) ([]types.Question, error) {
 	if len(filteredQuestions) > 0 {
 		return filteredQuestions, nil
 	}
-	return nil, fmt.Errorf("quiz not found containing %s", topic)
+	return nil, fmt.Errorf("no questions found containing %s", topic)
 }

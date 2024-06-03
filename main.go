@@ -14,15 +14,13 @@ import (
 )
 
 func main() {
-
 	// Define HTTP routes.
 	http.HandleFunc("/quiz/list", quizHandler.ListQuizzesHandler)
 	http.HandleFunc("/quiz/get", quizHandler.GetQuizByTitleHandler)
-	http.HandleFunc("/questions?topic=", quizHandler.ListQuestionsByTopicHandler)
+	http.HandleFunc("/questions", quizHandler.ListQuestionsByTopicHandler)
 
 	// Start server in a separate goroutine
 	go func() {
-		fmt.Println("Starting server on :8080")
 		if err := http.ListenAndServe(":8080", nil); err != nil {
 			fmt.Printf("could not start server: %s\n", err)
 		}
