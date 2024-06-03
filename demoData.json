@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Quiz 1",
+    "questions": [
+      {
+        "text": "What is the capital of France?",
+        "options": ["Paris", "London", "Berlin", "Rome"],
+        "correctAnswer": "Paris",
+        "distractors": ["London", "Berlin", "Rome"]
+      },
+      {
+        "text": "What is the capital of America?",
+        "options": ["Washington DC", "San Francisco", "New York City", "Miami"],
+        "correctAnswer": "Washington DC",
+        "distractors": ["San Francisco", "New York City", "Miami"]
+      },
+      {
+        "text": "Who wrote 'Romeo and Juliet'?",
+        "options": [
+          "William Shakespeare",
+          "Jane Austen",
+          "Charles Dickens",
+          "Leo Tolstoy"
+        ],
+        "correctAnswer": "William Shakespeare",
+        "distractors": ["Jane Austen", "Charles Dickens", "Leo Tolstoy"]
+      },
+      {
+        "text": "Who wrote 'Crime and Punishment'?",
+        "options": [
+          "Mikhail Bulgakov",
+          "Fyodor Dostoevsky",
+          "Friedrich Nietzsche",
+          "Ayn Rand"
+        ],
+        "correctAnswer": "Fyodor Dostoevsky",
+        "distractors": ["Mikhail Bulgakov", "Fyodor Dostoevsky", "Ayn Rand"]
+      }
+    ]
+  }
+]
