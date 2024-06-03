@@ -7,29 +7,42 @@ import (
 )
 
 func GetQuizByTitleHandler(w http.ResponseWriter, r *http.Request) {
-	// Extract quiz title from request parameters
 	quizTitle := r.URL.Query().Get("title")
 	if quizTitle == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
 
-	// Call the service method to retrieve the quiz by its title
 	quiz, err := quizService.GetQuizByTitle(quizTitle)
 	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
 	}
 
-	// Write JSON response
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(quiz)
 }
 
-// ListUsersHandler handles requests to list all users.
 func ListQuizzesHandler(w http.ResponseWriter, r *http.Request) {
 	quizzes := quizService.ListQuizzes()
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(quizzes)
+}
+
+func ListQuestionsByTopicHandler(w http.ResponseWriter, r *http.Request) {
+	topic := r.URL.Query().Get("topic")
+	if topic == "" {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	questions, err := quizService.ListQuestionsByTopic(topic)
+	if err != nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(questions)
 }

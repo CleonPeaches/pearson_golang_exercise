@@ -4,21 +4,18 @@
     "questions": [
       {
         "text": "What is the capital of France?",
-        "topic": "Geography",
         "options": ["Paris", "London", "Berlin", "Rome"],
         "correctAnswer": "Paris",
         "distractors": ["London", "Berlin", "Rome"]
       },
       {
         "text": "What is the capital of America?",
-        "topic": "Geography",
         "options": ["Washington DC", "San Francisco", "New York City", "Miami"],
         "correctAnswer": "Washington DC",
         "distractors": ["San Francisco", "New York City", "Miami"]
       },
       {
         "text": "Who wrote 'Romeo and Juliet'?",
-        "topic": "Literature",
         "options": [
           "William Shakespeare",
           "Jane Austen",
@@ -30,7 +27,6 @@
       },
       {
         "text": "Who wrote 'Crime and Punishment'?",
-        "topic": "Literature",
         "options": [
           "Mikhail Bulgakov",
           "Fyodor Dostoevsky",
