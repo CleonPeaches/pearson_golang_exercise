@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"net/http"
+
 	quizService "quizApp/services"
 )
 
@@ -19,6 +20,7 @@ func GetQuizByTitleHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(quiz)
 }
@@ -26,6 +28,7 @@ func GetQuizByTitleHandler(w http.ResponseWriter, r *http.Request) {
 func ListQuizzesHandler(w http.ResponseWriter, r *http.Request) {
 	quizzes := quizService.ListQuizzes()
 
+	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(quizzes)
 }
@@ -43,6 +46,7 @@ func ListQuestionsByTopicHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(questions)
 }
